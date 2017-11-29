@@ -1,0 +1,311 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=7">
+
+  <meta name="language" content="en-EN" />
+  <meta name="author" content="Irfan Maulana" />
+  <title>Dashboard by Moch Dian Lazuardi Yudha</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bar_sk.css">
+  <link rel="stylesheet" href="css/bar_pensiun.css">
+
+  <script src="js/Chart.bundle.js"></script>
+  <script src="js/Chart.bundle.min.js"></script>
+  <script src="js/Chart.js"></script>
+  <script src="js/Chart.min.js"></script>
+</head>
+
+<body>
+
+  <header class="hero is-light" style="background-color: #fff;">
+    <div class="hero-head">
+      <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+
+          <a class="navbar-item">
+            Dashboard Dapen
+          </a>
+          
+          <button class="button navbar-burger" data-target="navMenu">
+            < ></span>
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
+
+
+        <div class="navbar-menu navbar-end" id="navMenu">
+          <a class="navbar-item nav-tag">
+            <span class="icon is-medium">
+              <i class="fa fa-envelope-o"></i>
+            </span>
+            <span class="tag is-primary tag-notif">6</span>
+          </a>  
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">              
+              <figure class="image is-32x32" style="margin-right:.5em;">
+                <img src="profil.jpg">
+              </figure>
+              Moch Dian Lazuardi Yudha
+            </a>
+          
+            <div class="navbar-dropdown is-right">              
+                <a class="navbar-item">
+                  <span class="icon is-small">
+                    <i class="fa fa-user-o"></i>
+                  </span>
+                  Profile
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  <span class="icon is-small">
+                    <i class="fa fa-power-off"></i>
+                  </span>
+                  Logout
+                </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="section" style="background-color: #fff;">
+    <div class="columns">
+      <aside class="column is-2">
+        <nav class="menu">
+          <p class="menu-label">
+            General
+          </p>
+          <ul class="menu-list">
+            <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+          </ul>
+          <p class="menu-label">
+            Administration
+          </p>
+          <ul class="menu-list">
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Forms</a></li>
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-desktop"></i></span> UI Elements</a></li>
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-table"></i></span> Tables</a></li>            
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-bar-chart"></i></span> Presentations</a></li>
+
+            <li>
+              <a class=""><i class="fa fa-cog"></i> Settings</a>
+              <ul>
+                <li><a>Members</a></li>
+                <li><a>Plugins</a></li>
+                <li><a>Add a member</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="column">
+        <div class="level">
+          <div class="level-left">
+            <div class="level-item">
+              <div class="title">Dashboard</div>
+            </div>
+          </div>
+          <div class="level-right">
+            <div class="level-item">
+              <button type="button" class="button is-small">
+                26 November, 2017 - 15 Desember, 2017
+              </button>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-multiline">
+          <div class="column">
+            <canvas id="pieChart"></canvas>
+            <div id="pieChart"></div>
+          </div>
+          <div class="column" style="margin-top:15px;">
+            <div class="box notification is-primary">
+              <div class="heading" style="text-align:center; font-size:30px; font-weight:bold;">Janda/Duda</div>
+              <div class="title" style="text-align:center">2000</div>
+            </div>
+          </div>
+          <div class="column" style="margin-top:15px;">
+            <div class="box notification is-primary">
+              <div class="heading" style="text-align:center; font-size:30px; font-weight:bold;">Langsung</div>
+              <div class="title" style="text-align:center">3000</div>
+            </div>
+          </div>
+          <div class="column" style="margin-top:15px;">
+            <div class="box notification is-primary">
+              <div class="heading" style="text-align:center; font-size:30px; font-weight:bold;">Anak</div>
+              <div class="title" style="text-align:center">2500</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="columns is-multiline">
+          <div class="column is-12">
+            <div class="column is-12">
+              <h2 class="p_pensiun" style="font-weight:bold; font-size:25px; margin-bottom:-25px;">
+                Pemasukan Iuran <a class="button is-link" style="margin-top:10px; margin-left:10px;">Read More</a>
+              </h2>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box notification is-primary">
+              <div class="heading" style="text-align:center">Sudah Iuran</div>
+              <div class="title" style="text-align:center">80%</div>
+              <div class="level">
+                <div class="level-item" style="text-align:center">
+                  <div class="">
+                    <div class="heading">Total Uang</div>
+                    <div class="title is-5">250.000.000</div>
+                  </div>
+                </div>
+                <div class="level-item" style="text-align:center">
+                  <div class="">
+                    <div class="heading">Total Orang</div>
+                    <div class="title is-5">80.000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-half">
+            <h1 style="font-size:25px; text-align:center; margin-top:25px; font-weight:bold;">
+              PROGRESS BAR
+            </h1>
+            <progress style="margin-top:15px" class="progress is-info is-large" value="80" max="100">80%</progress>
+            <div class="columns" style="margin-top:-30px;">
+              <div class="column">
+                0%
+              </div>
+              <div class="column" style="text-align:center">
+                50%
+              </div>
+              <div class="column" style="text-align:right">
+                100%
+              </div>
+            </div>
+          </div>
+          <div class="column">
+            <div class="box notification is-danger">
+              <div class="heading" style="text-align:center">Belum Iuran</div>
+              <div class="title" style="text-align:center">20%</div>
+              <div class="level">
+                <div class="level-item" style="text-align:center">
+                  <div class="">
+                    <div class="heading">Total Uang</div>
+                    <div class="title is-5">250.000.000</div>
+                  </div>
+                </div>
+                <div class="level-item" style="text-align:center">
+                  <div class="">
+                    <div class="heading">Total Orang</div>
+                    <div class="title is-5">80.000</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="panel" style="height: 35%;">
+          <div class="panel-block" style="height: 65%;">
+            <section class="balanceBox is-four-fifths">
+              <div class="headerBox">
+                <h1 class="balanceHeader" style="font-weight:bold">
+                  Pemasukan SK  <a class="button is-link" style="margin-top:10px; margin-left:10px;">Read More</a>
+                </h1>
+              </div>
+              <!--headerBox-->
+
+              <br>
+              <p style="left: 40px; position: absolute; font-weight:bold;">
+                Pemasukan SK bulan ini yaitu 500 jilid, dan belum sampai dari apa yang diharapkan
+              </p>
+
+              <hr class="divider" style="margin-top:50px;">
+
+              <div class="meterContainer" style="margin-top:5%;">
+                <div aria-hidden="true" class="meterBackground">
+                  <div aria-hidden="true" class="meterBar">
+                    <label class="progressValue">
+                      <span class="progressNumber"></span>
+                      <meter max="1000" value="500" class="leaseMeter"></meter>
+                    </label>
+                  </div>
+                  <div class="columns" style="margin-top:0px;">
+                    <div class="column">
+                      0
+                    </div>
+                    <div class="column" style="text-align:center">
+                      500
+                    </div>
+                    <div class="column" style="text-align:right">
+                      1000
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </section>
+          </div>
+        </div>
+
+        <div class="panel" style="margin-top:-12%; margin-bottom:20px;">
+          <div class="panel-block">
+            <div class="columns is-multiline">
+              <div class="column is-12">
+                <p class="p_pensiun" style="font-weight:bold">
+                  Kelebihan Bayar  <a href="kelebihan_bayar.html" class="button is-link" style="margin-top:10px; margin-left:10px;">Read More</a>
+                  <span class="free-space">Total kelebihan bayarnya 240.000.000 dari maksimum perkiraan 300.000.000</span>
+                </p>
+              </div>
+              <div class="column is-12">
+                <meter class="meter_pensiun" value="240.000.000" min="0" max="300.000.000" title="Juta">
+                  <div class="meter-gauge">
+                    <span style="width: 20%;">Total Kelebihan Bayar</span>
+                  </div>
+                </meter>
+              </div>
+              <div class="column is-12" style="margin-top:-5%; margin-bottom:2%;">
+                <ul class="swatch">
+                  <li class="swatch__elem">Datul
+                    <span class="used-space">200.000.000</span>
+                  </li>
+                  <li class="swatch__elem">Kunjungan
+                    <span class="used-space">25.000.000</span>
+                  </li>
+                  <li class="swatch__elem">Kecepatan Laporan Hapus
+                    <span class="used-space">15.000.000</span>
+                  </li>
+                </ul>
+              </div>
+              <div class="column is-12">
+                <h2 style="font-weight:bold">Tangguhan</h2>  <a class="button is-link" style="margin-bottom:-20px; margin-left:10px;">Read More</a>
+                <canvas id="myChart" style="margin-bottom:25px;"></canvas>
+                <div id="myChart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="/bulma-admin-dashboard-template/dist/build.js"></script>
+
+  <script src="js/bar_sk.js"></script>
+  <script src="js/chart_pensiun.js"></script>
+  <script src="js/chart_atas.js"></script>
+
+</body>
+
+</html>

@@ -1,0 +1,372 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta name="robots" content="index, follow" />
+  <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=7">
+
+  <meta name="language" content="en-EN" />
+  <meta name="author" content="Irfan Maulana" />
+  <title>Dashboard by Moch Dian Lazuardi Yudha</title>
+
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bulma/0.6.1/css/bulma.min.css">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+  <link rel="stylesheet" href="css/bar_sk.css">
+  <link rel="stylesheet" href="css/bar_pensiun.css">
+  <link rel="stylesheet" href="css/dataTables.bulma.css">
+  <link rel="stylesheet" href="css/dataTables.bulma.min.css">
+
+</head>
+
+<body>
+
+  <header class="hero is-light" style="background-color: #fff;">
+    <div class="hero-head">
+      <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
+        <div class="navbar-brand">
+
+          <a class="navbar-item">
+            Dashboard Dapen
+          </a>
+          
+          <button class="button navbar-burger" data-target="navMenu">
+            < ></span>
+            <span></span>
+            <span></span>
+          </button>
+
+        </div>
+
+
+        <div class="navbar-menu navbar-end" id="navMenu">
+          <a class="navbar-item nav-tag">
+            <span class="icon is-medium">
+              <i class="fa fa-envelope-o"></i>
+            </span>
+            <span class="tag is-primary tag-notif">6</span>
+          </a>  
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">              
+              <figure class="image is-32x32" style="margin-right:.5em;">
+                <img src="profil.jpg">
+              </figure>
+              Moch Dian Lazuardi Yudha
+            </a>
+          
+            <div class="navbar-dropdown is-right">              
+                <a class="navbar-item">
+                  <span class="icon is-small">
+                    <i class="fa fa-user-o"></i>
+                  </span>
+                  Profile
+                </a>
+                <hr class="navbar-divider">
+                <a class="navbar-item">
+                  <span class="icon is-small">
+                    <i class="fa fa-power-off"></i>
+                  </span>
+                  Logout
+                </a>
+            </div>
+          </div>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <div class="section" style="background-color: #fff;">
+    <div class="columns">
+      <aside class="column is-2">
+        <nav class="menu">
+          <p class="menu-label">
+            General
+          </p>
+          <ul class="menu-list">
+            <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+          </ul>
+          <p class="menu-label">
+            Administration
+          </p>
+          <ul class="menu-list">
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Forms</a></li>
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-desktop"></i></span> UI Elements</a></li>
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-table"></i></span> Tables</a></li>            
+            <li><a href="#"><span class="icon is-small"><i class="fa fa-bar-chart"></i></span> Presentations</a></li>
+
+            <li>
+              <a class=""><i class="fa fa-cog"></i> Settings</a>
+              <ul>
+                <li><a>Members</a></li>
+                <li><a>Plugins</a></li>
+                <li><a>Add a member</a></li>
+              </ul>
+            </li>
+          </ul>
+        </nav>
+      </aside>
+
+      <main class="column">
+          <div class="column is-12" style="margin-bottom:-20px;">
+            <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
+                <ul>
+                    <li><a href="#">Dashboard</a></li>
+                    <li><a href="#">Kelebihan Baar</a></li>
+                </ul>
+            </nav>
+          </div>
+          <div class="column is-12">
+            <h2 style="margin-bottom:10px;">Filter</h2>
+            <div class="field has-addons">
+                <div class="control" style="width:40%">
+                    <input class="input is-danger" type="text" placeholder="Cari Instansi">
+                    <p class="help is-danger">Instansi Tidak Terdapat di Database</p>
+                </div>
+                <div class="control">
+                    <a class="button is-info">
+                    Tambah Filtering
+                    </a>
+                </div>
+                <div class="control" style="width:40%; margin-left:10%;">
+                    <input class="input" type="text" placeholder="Cari NIK">
+                </div>
+                <div class="control">
+                    <a class="button is-info">
+                    Tambah Filtering
+                    </a>
+                </div>
+            </div>
+            <div class="field has-addons">
+                <div class="control is-expanded">
+                    <div class="select is-fullwidth">
+                    <select name="country">
+                        <option value="0">0</option>
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                    </select>
+                    </div>
+                </div>
+                <div class="control">
+                    <button type="submit" class="button is-info">Tambah Ahli Waris</button>
+                </div>
+            </div>
+
+            <div class="columns">
+                <div class="column is-4">
+                    <label class="label">Instansi</label>
+                    <div class="field is-grouped is-grouped-multiline">
+                        <div class="control">
+                            <div class="tags has-addons">
+                            <a class="tag is-link">Papua</a>
+                            <a class="tag is-delete"></a>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <div class="tags has-addons">
+                            <a class="tag is-link">Jawa Barat</a>
+                            <a class="tag is-delete"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <label class="label">NIK</label>
+                    <div class="field is-grouped is-grouped-multiline">
+                        <div class="control">
+                            <div class="tags has-addons">
+                            <a class="tag is-link">Papua</a>
+                            <a class="tag is-delete"></a>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <div class="tags has-addons">
+                            <a class="tag is-link">Jawa Barat</a>
+                            <a class="tag is-delete"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="column is-4">
+                    <label class="label">Ahli Waris</label>
+                    <div class="field is-grouped is-grouped-multiline">
+                        <div class="control">
+                            <div class="tags has-addons">
+                            <a class="tag is-link">Papua</a>
+                            <a class="tag is-delete"></a>
+                            </div>
+                        </div>
+
+                        <div class="control">
+                            <div class="tags has-addons">
+                            <a class="tag is-link">Jawa Barat</a>
+                            <a class="tag is-delete"></a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+          </div>
+
+          <div class="panel column is-12">
+              <div class="panel-heading">
+                  <label class="label">All Table</label>
+              </div>
+              <div class="panel-block column is-12">
+                <table id="fullfeatures" class="table is-striped is-bordered" cellspacing="0" width="100%">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Company</th>
+                            <th>Office</th>
+                            <th>Start date</th>
+                            <th>Salary</th>
+                        </tr>
+                    </thead>
+                    <tfoot>
+                            <tr>
+                                <th>Name</th>
+                                <th>Company</th>
+                                <th>Office</th>
+                                <th>Start date</th>
+                                <th>Salary</th>
+                            </tr>
+                    </tfoot>
+                    <tbody>
+                        <tr>
+                            <td>Kimberley</td>
+                            <td>Non Egestas A Inc.</td>
+                            <td>Fremantle</td>
+                            <td>February 7th, 2016</td>
+                            <td>$218,565.75</td>
+                        </tr>
+                        <tr>
+                            <td>Hammett</td>
+                            <td>Dui LLC</td>
+                            <td>Zuccarello</td>
+                            <td>June 27th, 2010</td>
+                            <td>$219,811.59</td>
+                        </tr>
+                    </tbody>
+                </table>
+              </div>
+          </div>
+
+          <div class="columns">
+            <div class="panel column is-6">
+                <div class="panel-heading">
+                    Home Visit Per-Cabang
+                </div>
+                <div class="panel-block" style="width:100%;">
+                    <table id="Home" class="table is-striped is-bordered" cellspacing="0" width="107.5%" style="margin-left:0px; margin-bottom:-10px;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+            
+            <div class="panel column is-6">
+                <div class="panel-heading">
+                    Ahli Waris 0
+                </div>
+                <div class="panel-block" style="width:100%;">
+                    <table id="Waris" class="table is-striped is-bordered" cellspacing="0" width="107.5%" style="margin-left:0px; margin-bottom:-10px;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                            <tr>
+                                <td>Tiger Nixon</td>
+                                <td>System Architect</td>
+                            </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
+          </div>
+      </main>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-slimScroll/1.3.8/jquery.slimscroll.js"></script>
+  <script src="https://cdn.datatables.net/1.10.16/js/jquery.dataTables.min.js"></script>
+  <script type="text/javascript" src="js/dataTables.bulma.min.js"></script>
+  
+  <script>
+		$(document).ready(function() {
+		    $('#fullfeatures').DataTable({
+		    	"drawCallback": function( settings ) {
+	                if(!$("#fullfeatures").parent().hasClass("table-is-responsive")){
+	                    $("#fullfeatures").wrap('<div class="table-is-responsive"></div>');
+	                }
+            	}
+		    });
+        });
+        $(document).ready(function() {
+		    $('#Home').DataTable({
+		    	"drawCallback": function( settings ) {
+	                if(!$("#Home").parent().hasClass("table-is-responsive")){
+	                    $("#Home").wrap('<div class="table-is-responsive"></div>');
+	                }
+            	}
+		    });
+        });
+        $(document).ready(function() {
+		    $('#Waris').DataTable({
+		    	"drawCallback": function( settings ) {
+	                if(!$("#Waris").parent().hasClass("table-is-responsive")){
+	                    $("#Waris").wrap('<div class="table-is-responsive"></div>');
+	                }
+            	}
+		    });
+		});
+	</script>
+
+  <script src="js/bar_sk.js"></script>
+  <script src="js/chart_pensiun.js"></script>
+  <script src="js/chart_atas.js"></script>
+
+</body>
+
+</html>
