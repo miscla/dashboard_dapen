@@ -17,6 +17,10 @@
   <link rel="stylesheet" href="css/dataTables.bulma.css">
   <link rel="stylesheet" href="css/dataTables.bulma.min.css">
 
+  <script src="js/Chart.bundle.js"></script>
+  <script src="js/Chart.bundle.min.js"></script>
+  <script src="js/Chart.js"></script>
+  <script src="js/Chart.min.js"></script>
 </head>
 
 <body>
@@ -107,7 +111,7 @@
       </aside>
 
       <main class="column">
-          <div class="column is-12" style="margin-bottom:-20px;">
+          <div class="column is-12" style="margin-bottom:20px;">
             <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
                 <ul>
                     <li><a href="#">Dashboard</a></li>
@@ -115,149 +119,11 @@
                 </ul>
             </nav>
           </div>
-          <div class="column is-12">
-            <h2 style="margin-bottom:10px;">Filter</h2>
-            <div class="field has-addons">
-                <div class="control" style="width:40%">
-                    <input class="input is-danger" type="text" placeholder="Cari Instansi">
-                    <p class="help is-danger">Instansi Tidak Terdapat di Database</p>
-                </div>
-                <div class="control">
-                    <a class="button is-info">
-                    Tambah Filtering
-                    </a>
-                </div>
-                <div class="control" style="width:40%; margin-left:10%;">
-                    <input class="input" type="text" placeholder="Cari NIK">
-                </div>
-                <div class="control">
-                    <a class="button is-info">
-                    Tambah Filtering
-                    </a>
-                </div>
-            </div>
-            <div class="field has-addons">
-                <div class="control is-expanded">
-                    <div class="select is-fullwidth">
-                    <select name="country">
-                        <option value="0">0</option>
-                        <option value="1">1</option>
-                        <option value="2">2</option>
-                        <option value="3">3</option>
-                    </select>
-                    </div>
-                </div>
-                <div class="control">
-                    <button type="submit" class="button is-info">Tambah Ahli Waris</button>
-                </div>
-            </div>
-
-            <div class="columns">
-                <div class="column is-4">
-                    <label class="label">Instansi</label>
-                    <div class="field is-grouped is-grouped-multiline">
-                        <div class="control">
-                            <div class="tags has-addons">
-                            <a class="tag is-link">Papua</a>
-                            <a class="tag is-delete"></a>
-                            </div>
-                        </div>
-
-                        <div class="control">
-                            <div class="tags has-addons">
-                            <a class="tag is-link">Jawa Barat</a>
-                            <a class="tag is-delete"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <label class="label">NIK</label>
-                    <div class="field is-grouped is-grouped-multiline">
-                        <div class="control">
-                            <div class="tags has-addons">
-                            <a class="tag is-link">Papua</a>
-                            <a class="tag is-delete"></a>
-                            </div>
-                        </div>
-
-                        <div class="control">
-                            <div class="tags has-addons">
-                            <a class="tag is-link">Jawa Barat</a>
-                            <a class="tag is-delete"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="column is-4">
-                    <label class="label">Ahli Waris</label>
-                    <div class="field is-grouped is-grouped-multiline">
-                        <div class="control">
-                            <div class="tags has-addons">
-                            <a class="tag is-link">Papua</a>
-                            <a class="tag is-delete"></a>
-                            </div>
-                        </div>
-
-                        <div class="control">
-                            <div class="tags has-addons">
-                            <a class="tag is-link">Jawa Barat</a>
-                            <a class="tag is-delete"></a>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-          </div>
-
-          <div class="panel column is-12">
-              <div class="panel-heading">
-                  <label class="label">All Table</label>
-              </div>
-              <div class="panel-block column is-12">
-                <table id="fullfeatures" class="table is-striped is-bordered" cellspacing="0" width="100%">
-                    <thead>
-                        <tr>
-                            <th>Name</th>
-                            <th>Company</th>
-                            <th>Office</th>
-                            <th>Start date</th>
-                            <th>Salary</th>
-                        </tr>
-                    </thead>
-                    <tfoot>
-                            <tr>
-                                <th>Name</th>
-                                <th>Company</th>
-                                <th>Office</th>
-                                <th>Start date</th>
-                                <th>Salary</th>
-                            </tr>
-                    </tfoot>
-                    <tbody>
-                        <tr>
-                            <td>Kimberley</td>
-                            <td>Non Egestas A Inc.</td>
-                            <td>Fremantle</td>
-                            <td>February 7th, 2016</td>
-                            <td>$218,565.75</td>
-                        </tr>
-                        <tr>
-                            <td>Hammett</td>
-                            <td>Dui LLC</td>
-                            <td>Zuccarello</td>
-                            <td>June 27th, 2010</td>
-                            <td>$219,811.59</td>
-                        </tr>
-                    </tbody>
-                </table>
-              </div>
-          </div>
 
           <div class="columns">
             <div class="panel column is-6">
                 <div class="panel-heading">
-                    Home Visit Per-Cabang
+                    TOP 10
                 </div>
                 <div class="panel-block" style="width:100%;">
                     <table id="Home" class="table is-striped is-bordered" cellspacing="0" width="107.5%" style="margin-left:0px; margin-bottom:-10px;">
@@ -291,7 +157,7 @@
             
             <div class="panel column is-6">
                 <div class="panel-heading">
-                    Ahli Waris 0
+                    BOTTOM 10
                 </div>
                 <div class="panel-block" style="width:100%;">
                     <table id="Waris" class="table is-striped is-bordered" cellspacing="0" width="107.5%" style="margin-left:0px; margin-bottom:-10px;">
@@ -323,6 +189,12 @@
                 </div>
             </div>
           </div>
+
+          <div class="column is-12">
+            <h2 style="font-weight:bold">History Nunggak</h2>
+            <canvas id="chartNunggak" style="margin-bottom:25px;"></canvas>
+            <div id="chartNunggak"></div>
+          </div>
       </main>
     </div>
   </div>
@@ -333,15 +205,6 @@
   <script type="text/javascript" src="js/dataTables.bulma.min.js"></script>
   
   <script>
-		$(document).ready(function() {
-		    $('#fullfeatures').DataTable({
-		    	"drawCallback": function( settings ) {
-	                if(!$("#fullfeatures").parent().hasClass("table-is-responsive")){
-	                    $("#fullfeatures").wrap('<div class="table-is-responsive"></div>');
-	                }
-            	}
-		    });
-        });
         $(document).ready(function() {
 		    $('#Home').DataTable({
 		    	"drawCallback": function( settings ) {
@@ -363,7 +226,47 @@
 	</script>
 
   <script src="js/bar_sk.js"></script>
-  <script src="js/chart_pensiun.js"></script>
+  <script>
+    var ctx = document.getElementById('chartNunggak').getContext('2d');
+    var chart = new Chart(ctx, {
+        // The type of chart we want to create
+        type: 'bar',
+
+        // The data for our dataset
+        data: {
+            labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+            datasets: [{
+                label: "Tangguhan Tahun 2018",
+                backgroundColor: [
+                    'rgb(255, 99, 132)',
+                    'rgb(255, 99, 132)',
+                    "rgb(0, 255, 0)",
+                    'rgb(255, 99, 132)',
+                    "rgb(0, 255, 0)",
+                    'rgb(255, 99, 132)',
+                    "rgb(0, 255, 0)",
+                    'rgb(255, 99, 132)',
+                    "rgb(0, 255, 0)",
+                    "rgb(0, 255, 0)",
+                    'rgb(255, 99, 132)',
+                    "rgb(0, 255, 0)"
+                ],
+                data: [154, 100, 200, 193, 354, 120, 290, 140, 222, 300, 230, 30, 0],
+                fill: false,
+                borderWidth: 1,
+            }]
+        },
+
+        // Configuration options go here
+        options: {
+            elements: {
+                line: {
+                    tension: 0, // disables bezier curves
+                }
+            }
+        }
+    });
+  </script>
   <script src="js/chart_atas.js"></script>
 
 </body>
