@@ -115,7 +115,7 @@
             <nav class="breadcrumb has-arrow-separator" aria-label="breadcrumbs">
                 <ul>
                     <li><a href="#">Dashboard</a></li>
-                    <li><a href="#">Kelebihan Baar</a></li>
+                    <li><a href="#">Kelebihan Bayar</a></li>
                 </ul>
             </nav>
           </div>
@@ -126,7 +126,7 @@
                     TOP 10
                 </div>
                 <div class="panel-block" style="width:100%;">
-                    <table id="Home" class="table is-striped is-bordered" cellspacing="0" width="107.5%" style="margin-left:0px; margin-bottom:-10px;">
+                    <table id="Home" class="table is-striped is-bordered" cellspacing="0" width="100%" style="margin-left:0px; margin-bottom:-10px;">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -135,7 +135,7 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>Tiger Nixon</td>
+                                <td>Kecebong Jemping</td>
                                 <td>System Architect</td>
                             </tr>
                             <tr>
@@ -160,7 +160,7 @@
                     BOTTOM 10
                 </div>
                 <div class="panel-block" style="width:100%;">
-                    <table id="Waris" class="table is-striped is-bordered" cellspacing="0" width="107.5%" style="margin-left:0px; margin-bottom:-10px;">
+                    <table id="Waris" class="table is-striped is-bordered" cellspacing="0" width="100%" style="margin-left:0px; margin-bottom:-10px;">
                         <thead>
                             <tr>
                                 <th>Name</th>
@@ -193,7 +193,7 @@
           <div class="column is-12">
             <h2 style="font-weight:bold">History Nunggak</h2>
             <canvas id="chartNunggak" style="margin-bottom:25px;"></canvas>
-            <div id="chartNunggak"></div>
+            <div id="chartNunggak" class="chartNunggak"></div>
           </div>
       </main>
     </div>
@@ -234,22 +234,22 @@
 
         // The data for our dataset
         data: {
-            labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
+            labels: ["Januari", "Februari", "Maret", "April", "Mei", "Juni", "Juli", "Agustus", "September", "Oktober", "November", "Desember"],
             datasets: [{
                 label: "Tangguhan Tahun 2018",
                 backgroundColor: [
-                    'rgb(255, 99, 132)',
-                    'rgb(255, 99, 132)',
-                    "rgb(0, 255, 0)",
-                    'rgb(255, 99, 132)',
-                    "rgb(0, 255, 0)",
-                    'rgb(255, 99, 132)',
-                    "rgb(0, 255, 0)",
-                    'rgb(255, 99, 132)',
-                    "rgb(0, 255, 0)",
-                    "rgb(0, 255, 0)",
-                    'rgb(255, 99, 132)',
-                    "rgb(0, 255, 0)"
+                    'rgb(239, 231, 4)', //Kuning
+                    'rgb(0, 255, 0)',   //Hijau
+                    'rgb(239, 231, 4)', //Kuning
+                    'rgb(239, 231, 4)', //Kuning
+                    'rgb(255, 99, 132)',    //Merah
+                    'rgb(0, 255, 0)',   //Hijau
+                    'rgb(239, 231, 4)',   //Kuning
+                    'rgb(0, 255, 0)',    //Hijau
+                    'rgb(239, 231, 4)', //kuning
+                    'rgb(255, 99, 132)', //merah
+                    'rgb(239, 231, 4)', //Kuning
+                    'rgb(0, 255, 0)' //Hijau
                 ],
                 data: [154, 100, 200, 193, 354, 120, 290, 140, 222, 300, 230, 30, 0],
                 fill: false,
@@ -259,16 +259,38 @@
 
         // Configuration options go here
         options: {
+            onClick: function(c,i){
+                e=i[0];
+                graphEventClick(e._index);
+            },            
             elements: {
                 line: {
                     tension: 0, // disables bezier curves
                 }
-            }
+            },
+            tooltips: {
+                mode: 'index'
+            },
         }
+
     });
+
+    function graphEventClick(index){
+        $('.chartNunggak').empty();        
+        $('.chartNunggak').append(index);
+        // alert(index);
+        // $('.chartNunggak').append(index);
+        
+    }
+
+    for(i=0;i<chart.data.labels.length;i++){
+        chart.data.labels[i].onClick = function(){
+            alert(chart.data.labels[i]);
+        }
+    }
+
   </script>
   <script src="js/chart_atas.js"></script>
-
 </body>
 
 </html>
