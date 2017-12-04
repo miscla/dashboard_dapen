@@ -65,9 +65,9 @@ body {
 .meterContainer {
   overflow: display;
   height: 78px;
-  width: 300px;
+  width: 220px;
   position: absolute;
-  top: 79px;
+  top: 10px;
   left: 31px;
 }
 

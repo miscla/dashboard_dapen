@@ -19,7 +19,87 @@
   <script src="js/Chart.bundle.min.js"></script>
   <script src="js/Chart.js"></script>
   <script src="js/Chart.min.js"></script>
+
+  <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
 </head>
+
+<style>
+
+#content {
+    width:300px;
+    margin:10px auto;
+}
+
+#thermometer {
+    width:70px;
+    height:270px;
+    position: relative;
+    background: #ddd;
+    border:1px solid #aaa;
+    -webkit-border-radius: 12px;
+       -moz-border-radius: 12px;
+        -ms-border-radius: 12px;
+         -o-border-radius: 12px;
+            border-radius: 12px;
+
+    -webkit-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+       -moz-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+        -ms-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+         -o-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+            box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+}
+
+#thermometer .track {
+    height:250px;
+    top:10px;
+    width:20px;
+    border: 1px solid #aaa;
+    position: relative;
+    margin:0 auto;
+    background: rgb(255,255,255);
+    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,0,0)), color-stop(1%,rgb(255,255,255)));
+    background: -webkit-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+    background:      -o-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+    background:     -ms-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+    background:    -moz-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+    background:   linear-gradient(to bottom, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+    background-position: 0 -1px;
+    background-size: 100% 5%;
+}
+
+#thermometer .progressb {
+    height:0%;
+    width:100%;
+    background: rgb(20,100,20);
+    background: rgba(20,100,20,0.6);
+    position: absolute;
+    bottom:0;
+    left:0;
+}
+
+#thermometer .goal {
+    position:absolute;
+    top:0;
+}
+
+#thermometer .amount {
+    display: inline-block;
+    padding:0 5px 0 60px;
+    border-top:1px solid black;
+    font-family: Trebuchet MS;
+    font-weight: bold;
+    color:#333;
+}
+
+#thermometer .progressb .amount {
+    padding:0 5px 0 60px;
+    position: absolute;
+    border-top:1px solid #060;
+    color:#060;
+    left:0px;
+}
+
+</style>
 
 <body>
 
@@ -27,17 +107,9 @@
     <div class="hero-head">
       <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
-
           <a class="navbar-item">
-            Dashboard Dapen
+              Dashboard Dapen
           </a>
-          
-          <button class="button navbar-burger" data-target="navMenu">
-            < ></span>
-            <span></span>
-            <span></span>
-          </button>
-
         </div>
 
 
@@ -79,34 +151,6 @@
 
   <div class="section" style="background-color: #fff;">
     <div class="columns">
-      <aside class="column is-2">
-        <nav class="menu">
-          <p class="menu-label">
-            General
-          </p>
-          <ul class="menu-list">
-            <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
-          </ul>
-          <p class="menu-label">
-            Administration
-          </p>
-          <ul class="menu-list">
-            <li><a href="#"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Forms</a></li>
-            <li><a href="#"><span class="icon is-small"><i class="fa fa-desktop"></i></span> UI Elements</a></li>
-            <li><a href="#"><span class="icon is-small"><i class="fa fa-table"></i></span> Tables</a></li>            
-            <li><a href="#"><span class="icon is-small"><i class="fa fa-bar-chart"></i></span> Presentations</a></li>
-
-            <li>
-              <a class=""><i class="fa fa-cog"></i> Settings</a>
-              <ul>
-                <li><a>Members</a></li>
-                <li><a>Plugins</a></li>
-                <li><a>Add a member</a></li>
-              </ul>
-            </li>
-          </ul>
-        </nav>
-      </aside>
 
       <main class="column">
         <div class="level">
@@ -124,7 +168,7 @@
           </div>
         </div>
 
-        <div class="columns is-multiline">
+        <!-- <div class="columns is-multiline">
           <div class="column">
             <canvas id="pieChart"></canvas>
             <div id="pieChart"></div>
@@ -147,9 +191,112 @@
               <div class="title" style="text-align:center">2500</div>
             </div>
           </div>
-        </div>
+        </div> -->
 
         <div class="columns is-multiline">
+          <div class="column is-4">
+            <div class="panel">
+              <div class="panel-block" style="width:100%">
+                <p style="text-align:center; width:100%">Pemasukan Iuran</p>
+                <a href="iuran.html" class="button is-link" style="">Detail</a>
+              </div>
+              <div class="panel-block" style="width:100%">
+                <div class="columns is-multiline">
+                  <div class="column is-12" style="width:100%">
+                    <div class="box notification is-primary" style="width:100%">
+                      <div class="level">
+                        <div class="level-item" style="text-align:left">
+                          <div class="">
+                            <div class="heading">Sudah Iuran</div>
+                            <div class="title is-5">80%</div>
+                          </div>
+                        </div>
+                        <div class="level-item" style="text-align:center">
+                          <div class="">
+                            <div class="heading">Total Uang</div>
+                            <div class="title is-5">250.000.000</div>
+                          </div>
+                        </div>
+                        <div class="level-item" style="text-align:right">
+                          <div class="">
+                            <div class="heading">Total Orang</div>
+                            <div class="title is-5">80.000</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                  <div class="column is-12" style="width:100%; margin-top:10px;">
+                    <progress style="" class="progress is-success is-large" value="80" max="100">80%</progress>
+                  </div>
+                  <div class="column is-12" style="width:100%; text-align:center; margin-top:-6px; margin-bottom:0px;">
+                    <p>Status : <font color="green">Aman</font></p>
+                  </div>
+                  <div class="column is-12" style="width:100%">
+                    <div class="box notification is-danger" style="width:100%">
+                      <div class="level">
+                        <div class="level-item" style="text-align:left">
+                          <div class="">
+                            <div class="heading">Belum Iuran</div>
+                            <div class="title is-5">20%</div>
+                          </div>
+                        </div>
+                        <div class="level-item" style="text-align:center">
+                          <div class="">
+                            <div class="heading">Total Uang</div>
+                            <div class="title is-5">250.000.000</div>
+                          </div>
+                        </div>
+                        <div class="level-item" style="text-align:right">
+                          <div class="">
+                            <div class="heading">Total Orang</div>
+                            <div class="title is-5">80.000</div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-2">
+            <div class="panel">
+              <div class="panel-block" style="width:100%">
+                <p style="text-align:left; width:100%">SK Masuk</p>
+                <a href="sk.html" class="button is-link" style="">Detail</a>
+              </div>
+              <div class="panel-block" style="width:100%">
+                <div id="content">
+                  <div id="thermometer">
+                    <div class="track">
+                      <div class="goal">
+                          <div class="amount"> 90000 </div>
+                      </div>
+                      <div class="progressb">
+                          <div class="amount"> 47835 </div>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="column is-6">
+            <div class="panel">
+              <div class="panel-block" style="width:100%">
+                <p style="text-align:left; width:100%">Tangguhan</p>
+                <a href="sk.html" class="button is-link" style="">Detail</a>
+              </div>
+              <div class="panel-block" style="width:100%">
+                <canvas id="myChart"></canvas>
+                <div id="myChart"></div>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- <div class="columns is-multiline">
           <div class="column is-12">
             <div class="column is-12">
               <h2 class="p_pensiun" style="font-weight:bold; font-size:25px; margin-bottom:-25px;">
@@ -214,9 +361,9 @@
               </div>
             </div>
           </div>
-        </div>
+        </div> -->
 
-        <div class="panel" style="height: 35%;">
+        <!-- <div class="panel" style="height: 35%;">
           <div class="panel-block" style="height: 65%;">
             <section class="balanceBox is-four-fifths">
               <div class="headerBox">
@@ -224,7 +371,6 @@
                   Pemasukan SK  <a href="sk.html" class="button is-link" style="margin-top:10px; margin-left:10px;">Read More</a>
                 </h1>
               </div>
-              <!--headerBox-->
 
               <br>
               <p style="left: 40px; position: absolute; font-weight:bold;">
@@ -256,54 +402,136 @@
               </div>
             </section>
           </div>
-        </div>
-
-        <div class="panel" style="margin-top:-12%; margin-bottom:20px;">
+        </div> -->
+        <div class="panel" style="">
           <div class="panel-block">
-            <div class="columns is-multiline">
-              <div class="column is-12">
-                <p class="p_pensiun" style="font-weight:bold">
-                  Kelebihan Bayar  <a href="kelebihan_bayar.html" class="button is-link" style="margin-top:10px; margin-left:10px;">Read More</a>
-                  <span class="free-space">Total kelebihan bayarnya 240.000.000 dari maksimum perkiraan 300.000.000</span>
-                </p>
+            <div class="columns" style="width:100%">
+              <div class="column is-2" style="text-align:center; margin-top:15px;">
+                Kelebihan Bayar
+                <a href="kelebihan_bayar.html" class="button is-link" style="margin-top:5px;">Detail</a>
               </div>
-              <div class="column is-12">
+              <div class="column is-10">
                 <meter class="meter_pensiun" value="240.000.000" min="0" max="300.000.000" title="Juta">
                   <div class="meter-gauge">
                     <span style="width: 20%;">Total Kelebihan Bayar</span>
                   </div>
                 </meter>
-              </div>
-              <div class="column is-12" style="margin-top:-5%; margin-bottom:2%;">
                 <ul class="swatch">
-                  <li class="swatch__elem">Datul
-                    <span class="used-space">200.000.000</span>
+                  <li class="swatch__elem">Datul | 200.000.000
                   </li>
-                  <li class="swatch__elem">Kunjungan
-                    <span class="used-space">25.000.000</span>
+                  <li class="swatch__elem">Kunjungan | 25.000.000
                   </li>
-                  <li class="swatch__elem">Kecepatan Laporan Hapus
-                    <span class="used-space">15.000.000</span>
+                  <li class="swatch__elem">Kecepatan Laporan Hapus | 15.000.000
                   </li>
                 </ul>
               </div>
-              <div class="column is-12">
-                <h2 style="font-weight:bold">Tangguhan</h2>  <a class="button is-link" style="margin-bottom:-20px; margin-left:10px;">Read More</a>
-                <canvas id="myChart" style="margin-bottom:25px;"></canvas>
-                <div id="myChart"></div>
-              </div>
             </div>
+
+            <!-- <div class="columns" style="width:100%">
+              <div class="column is-2">
+
+              </div>
+              <div class="column is-10" style="">
+                <ul class="swatch">
+                  <li class="swatch__elem">Datul | 200.000.000
+                  </li>
+                  <li class="swatch__elem">Kunjungan | 25.000.000
+                  </li>
+                  <li class="swatch__elem">Kecepatan Laporan Hapus | 15.000.000
+                  </li>
+                </ul>
+              </div>
+            </div> -->
           </div>
         </div>
       </main>
     </div>
   </div>
 
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+  <script type="text/javascript" src="https://cdnjs.com/libraries/jQuery.mmenu"></script>
+
   <script src="/bulma-admin-dashboard-template/dist/build.js"></script>
 
   <script src="js/bar_sk.js"></script>
   <script src="js/chart_pensiun.js"></script>
   <script src="js/chart_atas.js"></script>
+
+  <script>
+    //originally from http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
+function formatCurrency(n, c, d, t) {
+    "use strict";
+
+    var s, i, j;
+
+    c = isNaN(c = Math.abs(c)) ? 2 : c;
+    d = d === undefined ? "." : d;
+    t = t === undefined ? "," : t;
+
+    s = n < 0 ? "-" : "";
+    i = parseInt(n = Math.abs(+n || 0).toFixed(c), 10) + "";
+    j = (j = i.length) > 3 ? j % 3 : 0;
+
+    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+}
+
+/**
+ * Thermometer Progress meter.
+ * This function will update the progress element in the "thermometer"
+ * to the updated percentage.
+ * If no parameters are passed in it will read them from the DOM
+ *
+ * @param {Number} goalAmount The Goal amount, this represents the 100% mark
+ * @param {Number} progressAmount The progress amount is the current amount
+ * @param {Boolean} animate Whether to animate the height or not
+ *
+ */
+function thermometer(goalAmount, progressAmount, animate) {
+    "use strict";
+
+    var $thermo = $("#thermometer"),
+        $progressb = $(".progressb", $thermo),
+        $goal = $(".goal", $thermo),
+        percentageAmount;
+
+    goalAmount = goalAmount || parseFloat( $goal.text() ),
+    progressAmount = progressAmount || parseFloat( $progressb.text() ),
+    percentageAmount =  Math.min( Math.round(progressAmount / goalAmount * 1000) / 10, 100); //make sure we have 1 decimal point
+
+    //let's format the numbers and put them back in the DOM
+    $goal.find(".amount").text( "$" + formatCurrency( goalAmount ) );
+    $progressb.find(".amount").text( "$" + formatCurrency( progressAmount ) );
+
+
+    //let's set the progress indicator
+    $progressb.find(".amount").hide();
+    if (animate !== false) {
+        $progressb.animate({
+            "height": percentageAmount + "%"
+        }, 1200, function(){
+            $(this).find(".amount").fadeIn(500);
+        });
+    }
+    else {
+        $progressb.css({
+            "height": percentageAmount + "%"
+        });
+        $progressb.find(".amount").fadeIn(500);
+    }
+}
+
+$(document).ready(function(){
+
+    //call without the parameters to have it read from the DOM
+    thermometer();
+    // or with parameters if you want to update it using JavaScript.
+    // you can update it live, and choose whether to show the animation
+    // (which you might not if the updates are relatively small)
+    //thermometer( 1000000, 425610, false );
+
+});
+
+  </script>
 
 </body>
 
