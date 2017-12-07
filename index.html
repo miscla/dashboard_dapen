@@ -14,13 +14,15 @@
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
   <link rel="stylesheet" href="css/bar_sk.css">
   <link rel="stylesheet" href="css/bar_pensiun.css">
-
+  
   <script src="js/Chart.bundle.js"></script>
   <script src="js/Chart.bundle.min.js"></script>
   <script src="js/Chart.js"></script>
   <script src="js/Chart.min.js"></script>
 
   <link href="http://code.ionicframework.com/ionicons/2.0.1/css/ionicons.min.css">
+
+  <link href="./css/sidebar.css" rel="stylesheet">
 </head>
 
 <style>
@@ -99,6 +101,10 @@
     left:0px;
 }
 
+#coba:hover {
+  background-color: black;
+}
+
 </style>
 
 <body>
@@ -155,6 +161,9 @@
       <main class="column">
         <div class="level">
           <div class="level-left">
+            <div class="level-item">
+              <a style="font-size:20px;" href="#" class="btn btn-success" data-action="open" data-side="left"><span class="icon is-small"><i class="fa fa-align-justify"></i></span></a>
+            </div>
             <div class="level-item">
               <div class="title">Dashboard</div>
             </div>
@@ -444,13 +453,48 @@
             </div> -->
           </div>
         </div>
+
+        
+        <div class="sidebars">
+          <div class="sidebar left">
+            <a href="#" class="btn btn-danger" data-action="close" data-side="left"><span>Close Left</span></a>
+            <nav class="menu">
+              <p class="menu-label" style="color:white">
+                General
+              </p>
+              <ul class="menu-list">
+                <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
+              </ul>
+              <p class="menu-label" style="color:white">
+                Administration
+              </p>
+              <ul class="menu-list">
+                <li><a href="#" id="coba" style="color:white;"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Forms</a></li>
+                <li><a href="#" id="coba" style="color:white"><span class="icon is-small"><i class="fa fa-desktop"></i></span> UI Elements</a></li>
+                <li><a href="#" id="coba" style="color:white"><span class="icon is-small"><i class="fa fa-table"></i></span> Tables</a></li>            
+                <li><a href="#" id="coba" style="color:white"><span class="icon is-small"><i class="fa fa-bar-chart"></i></span> Presentations</a></li>
+    
+                <li>
+                  <a id="coba" class="" style="color:white"><i class="fa fa-cog"></i> Settings</a>
+                  <ul>
+                    <li><a id="coba" style="color:white">Members</a></li>
+                    <li><a id="coba" style="color:white">Plugins</a></li>
+                    <li><a id="coba" style="color:white">Add a member</a></li>
+                  </ul>
+                </li>
+              </ul>
+            </nav>
+          </div>
+      </div>
       </main>
     </div>
   </div>
-
+  
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.com/libraries/jQuery.mmenu"></script>
-
+ 
+  <script src="./js/jquery.sidebar.js"></script>
+  <script src="http://jillix.github.io/jQuery-sidebar/js/handlers.js"></script>
   <script src="/bulma-admin-dashboard-template/dist/build.js"></script>
 
   <script src="js/bar_sk.js"></script>
