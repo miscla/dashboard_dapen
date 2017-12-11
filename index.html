@@ -28,77 +28,77 @@
 <style>
 
 #content {
-    width:300px;
-    margin:10px auto;
+  width:300px;
+  margin:10px auto;
 }
 
 #thermometer {
-    width:70px;
-    height:270px;
-    position: relative;
-    background: #ddd;
-    border:1px solid #aaa;
-    -webkit-border-radius: 12px;
-       -moz-border-radius: 12px;
-        -ms-border-radius: 12px;
-         -o-border-radius: 12px;
-            border-radius: 12px;
+  width:70px;
+  height:270px;
+  position: relative;
+  background: #ddd;
+  border:1px solid #aaa;
+  -webkit-border-radius: 12px;
+  -moz-border-radius: 12px;
+  -ms-border-radius: 12px;
+  -o-border-radius: 12px;
+  border-radius: 12px;
 
-    -webkit-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
-       -moz-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
-        -ms-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
-         -o-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
-            box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+  -webkit-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+  -moz-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+  -ms-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+  -o-box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
+  box-shadow: 1px 1px 4px #999, 5px 0 20px #999;
 }
 
 #thermometer .track {
-    height:250px;
-    top:10px;
-    width:20px;
-    border: 1px solid #aaa;
-    position: relative;
-    margin:0 auto;
-    background: rgb(255,255,255);
-    background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,0,0)), color-stop(1%,rgb(255,255,255)));
-    background: -webkit-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
-    background:      -o-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
-    background:     -ms-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
-    background:    -moz-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
-    background:   linear-gradient(to bottom, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
-    background-position: 0 -1px;
-    background-size: 100% 5%;
+  height:250px;
+  top:10px;
+  width:20px;
+  border: 1px solid #aaa;
+  position: relative;
+  margin:0 auto;
+  background: rgb(255,255,255);
+  background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,rgb(0,0,0)), color-stop(1%,rgb(255,255,255)));
+  background: -webkit-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+  background:      -o-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+  background:     -ms-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+  background:    -moz-linear-gradient(top, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+  background:   linear-gradient(to bottom, rgb(0,0,0) 0%,rgb(255,255,255) 10%);
+  background-position: 0 -1px;
+  background-size: 100% 5%;
 }
 
 #thermometer .progressb {
-    height:0%;
-    width:100%;
-    background: rgb(20,100,20);
-    background: rgba(20,100,20,0.6);
-    position: absolute;
-    bottom:0;
-    left:0;
+  height:0%;
+  width:100%;
+  background: rgb(20,100,20);
+  background: rgba(20,100,20,0.6);
+  position: absolute;
+  bottom:0;
+  left:0;
 }
 
 #thermometer .goal {
-    position:absolute;
-    top:0;
+  position:absolute;
+  top:0;
 }
 
 #thermometer .amount {
-    display: inline-block;
-    padding:0 5px 0 60px;
-    border-top:1px solid black;
-    font-family: Trebuchet MS;
-    font-weight: bold;
-    color:#333;
+  display: inline-block;
+  padding:0 5px 0 60px;
+  border-top:1px solid black;
+  font-family: Trebuchet MS;
+  font-weight: bold;
+  color:#333;
 }
 
 #thermometer .progressb .amount {
-    padding:0 5px 0 60px;
-    position: absolute;
-    border-top:1px solid #060;
-    color:#060;
-    left:0px;
+  padding:0 5px 0 60px;
+  position: absolute;
+  border-top:1px solid #060;
+  color:#060;
+  left:0px;
 }
 
 #coba:hover {
@@ -114,10 +114,37 @@
       <nav class="navbar has-shadow" role="navigation" aria-label="main navigation">
         <div class="navbar-brand">
           <a class="navbar-item">
-              Dashboard Dapen
+            Dashboard Dapen
           </a>
         </div>
 
+        <div class="navbar-brand" id="navMenu">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-link">              
+              Pemasukan Iuran
+            </a>
+
+            <div class="navbar-dropdown is-right">              
+              <a class="navbar-item">
+                Sudah Iuran
+              </a>
+              <a class="navbar-item">
+                Belum Iuran
+              </a>
+              <a class="navbar-item">
+                Detail
+              </a>
+            </div>
+          </div>
+        </div>
+
+        <div class="navbar-brand" id="navMenu">
+          <div class="navbar-item has-dropdown is-hoverable">
+            <a class="navbar-item nav-tag" href="#">
+              SK Masuk
+            </a>
+          </div>
+        </div>
 
         <div class="navbar-menu navbar-end" id="navMenu">
           <a class="navbar-item nav-tag">
@@ -125,7 +152,8 @@
               <i class="fa fa-envelope-o"></i>
             </span>
             <span class="tag is-primary tag-notif">6</span>
-          </a>  
+          </a>
+
           <div class="navbar-item has-dropdown is-hoverable">
             <a class="navbar-link">              
               <figure class="image is-32x32" style="margin-right:.5em;">
@@ -133,21 +161,21 @@
               </figure>
               Moch Dian Lazuardi Yudha
             </a>
-          
+
             <div class="navbar-dropdown is-right">              
-                <a class="navbar-item">
-                  <span class="icon is-small">
-                    <i class="fa fa-user-o"></i>
-                  </span>
-                  Profile
-                </a>
-                <hr class="navbar-divider">
-                <a class="navbar-item">
-                  <span class="icon is-small">
-                    <i class="fa fa-power-off"></i>
-                  </span>
-                  Logout
-                </a>
+              <a class="navbar-item">
+                <span class="icon is-small">
+                  <i class="fa fa-user-o"></i>
+                </span>
+                Profile
+              </a>
+              <hr class="navbar-divider">
+              <a class="navbar-item">
+                <span class="icon is-small">
+                  <i class="fa fa-power-off"></i>
+                </span>
+                Logout
+              </a>
             </div>
           </div>
         </div>
@@ -155,15 +183,12 @@
     </div>
   </header>
 
-  <div class="section" style="background-color: #fff;">
+  <div class="section" style="background-color: #fff; margin-top: -30px; height: 100vh;">
     <div class="columns">
 
       <main class="column">
         <div class="level">
           <div class="level-left">
-            <div class="level-item">
-              <a style="font-size:20px;" href="#" class="btn btn-success" data-action="open" data-side="left"><span class="icon is-small"><i class="fa fa-align-justify"></i></span></a>
-            </div>
             <div class="level-item">
               <div class="title">Dashboard</div>
             </div>
@@ -209,7 +234,7 @@
                 <p style="text-align:center; width:100%">Pemasukan Iuran</p>
                 <a href="iuran.html" class="button is-link" style="">Detail</a>
               </div>
-              <div class="panel-block" style="width:100%">
+              <div class="panel-block" style="width:100%; height:325px;">
                 <div class="columns is-multiline">
                   <div class="column is-12" style="width:100%">
                     <div class="box notification is-primary" style="width:100%">
@@ -275,15 +300,15 @@
                 <p style="text-align:left; width:100%">SK Masuk</p>
                 <a href="sk.html" class="button is-link" style="">Detail</a>
               </div>
-              <div class="panel-block" style="width:100%">
+              <div class="panel-block" style="width:100%; height:325px;">
                 <div id="content">
                   <div id="thermometer">
                     <div class="track">
                       <div class="goal">
-                          <div class="amount"> 90000 </div>
+                        <div class="amount"> 90000 </div>
                       </div>
                       <div class="progressb">
-                          <div class="amount"> 47835 </div>
+                        <div class="amount"> 47835 </div>
                       </div>
                     </div>
                   </div>
@@ -415,9 +440,9 @@
         <div class="panel" style="">
           <div class="panel-block">
             <div class="columns" style="width:100%">
-              <div class="column is-2" style="text-align:center; margin-top:15px;">
+              <div class="column is-2" style="text-align:center; margin-top:30px;">
                 Kelebihan Bayar
-                <a href="kelebihan_bayar.html" class="button is-link" style="margin-top:5px;">Detail</a>
+                <a href="kelebihan_bayar.html" class="button is-link" style="margin-top: -7px;">Detail</a>
               </div>
               <div class="column is-10">
                 <meter class="meter_pensiun" value="240.000.000" min="0" max="300.000.000" title="Juta">
@@ -453,46 +478,13 @@
             </div> -->
           </div>
         </div>
-
-        
-        <div class="sidebars">
-          <div class="sidebar left">
-            <a href="#" class="btn btn-danger" data-action="close" data-side="left"><span>Close Left</span></a>
-            <nav class="menu">
-              <p class="menu-label" style="color:white">
-                General
-              </p>
-              <ul class="menu-list">
-                <li><a class="is-active" href="#"><span class="icon is-small"><i class="fa fa-tachometer"></i></span> Dashboard</a></li>
-              </ul>
-              <p class="menu-label" style="color:white">
-                Administration
-              </p>
-              <ul class="menu-list">
-                <li><a href="#" id="coba" style="color:white;"><span class="icon is-small"><i class="fa fa-pencil-square-o"></i></span> Forms</a></li>
-                <li><a href="#" id="coba" style="color:white"><span class="icon is-small"><i class="fa fa-desktop"></i></span> UI Elements</a></li>
-                <li><a href="#" id="coba" style="color:white"><span class="icon is-small"><i class="fa fa-table"></i></span> Tables</a></li>            
-                <li><a href="#" id="coba" style="color:white"><span class="icon is-small"><i class="fa fa-bar-chart"></i></span> Presentations</a></li>
-    
-                <li>
-                  <a id="coba" class="" style="color:white"><i class="fa fa-cog"></i> Settings</a>
-                  <ul>
-                    <li><a id="coba" style="color:white">Members</a></li>
-                    <li><a id="coba" style="color:white">Plugins</a></li>
-                    <li><a id="coba" style="color:white">Add a member</a></li>
-                  </ul>
-                </li>
-              </ul>
-            </nav>
-          </div>
-      </div>
       </main>
     </div>
   </div>
   
   <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
   <script type="text/javascript" src="https://cdnjs.com/libraries/jQuery.mmenu"></script>
- 
+
   <script src="./js/jquery.sidebar.js"></script>
   <script src="http://jillix.github.io/jQuery-sidebar/js/handlers.js"></script>
   <script src="/bulma-admin-dashboard-template/dist/build.js"></script>
@@ -503,21 +495,21 @@
 
   <script>
     //originally from http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
-function formatCurrency(n, c, d, t) {
-    "use strict";
+    function formatCurrency(n, c, d, t) {
+      "use strict";
 
-    var s, i, j;
+      var s, i, j;
 
-    c = isNaN(c = Math.abs(c)) ? 2 : c;
-    d = d === undefined ? "." : d;
-    t = t === undefined ? "," : t;
+      c = isNaN(c = Math.abs(c)) ? 2 : c;
+      d = d === undefined ? "." : d;
+      t = t === undefined ? "," : t;
 
-    s = n < 0 ? "-" : "";
-    i = parseInt(n = Math.abs(+n || 0).toFixed(c), 10) + "";
-    j = (j = i.length) > 3 ? j % 3 : 0;
+      s = n < 0 ? "-" : "";
+      i = parseInt(n = Math.abs(+n || 0).toFixed(c), 10) + "";
+      j = (j = i.length) > 3 ? j % 3 : 0;
 
-    return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
-}
+      return s + (j ? i.substr(0, j) + t : "") + i.substr(j).replace(/(\d{3})(?=\d)/g, "$1" + t) + (c ? d + Math.abs(n - i).toFixed(c).slice(2) : "");
+    }
 
 /**
  * Thermometer Progress meter.
@@ -530,16 +522,16 @@ function formatCurrency(n, c, d, t) {
  * @param {Boolean} animate Whether to animate the height or not
  *
  */
-function thermometer(goalAmount, progressAmount, animate) {
-    "use strict";
+ function thermometer(goalAmount, progressAmount, animate) {
+  "use strict";
 
-    var $thermo = $("#thermometer"),
-        $progressb = $(".progressb", $thermo),
-        $goal = $(".goal", $thermo),
-        percentageAmount;
+  var $thermo = $("#thermometer"),
+  $progressb = $(".progressb", $thermo),
+  $goal = $(".goal", $thermo),
+  percentageAmount;
 
-    goalAmount = goalAmount || parseFloat( $goal.text() ),
-    progressAmount = progressAmount || parseFloat( $progressb.text() ),
+  goalAmount = goalAmount || parseFloat( $goal.text() ),
+  progressAmount = progressAmount || parseFloat( $progressb.text() ),
     percentageAmount =  Math.min( Math.round(progressAmount / goalAmount * 1000) / 10, 100); //make sure we have 1 decimal point
 
     //let's format the numbers and put them back in the DOM
@@ -550,21 +542,21 @@ function thermometer(goalAmount, progressAmount, animate) {
     //let's set the progress indicator
     $progressb.find(".amount").hide();
     if (animate !== false) {
-        $progressb.animate({
-            "height": percentageAmount + "%"
-        }, 1200, function(){
-            $(this).find(".amount").fadeIn(500);
-        });
+      $progressb.animate({
+        "height": percentageAmount + "%"
+      }, 1200, function(){
+        $(this).find(".amount").fadeIn(500);
+      });
     }
     else {
-        $progressb.css({
-            "height": percentageAmount + "%"
-        });
-        $progressb.find(".amount").fadeIn(500);
+      $progressb.css({
+        "height": percentageAmount + "%"
+      });
+      $progressb.find(".amount").fadeIn(500);
     }
-}
+  }
 
-$(document).ready(function(){
+  $(document).ready(function(){
 
     //call without the parameters to have it read from the DOM
     thermometer();
@@ -573,9 +565,9 @@ $(document).ready(function(){
     // (which you might not if the updates are relatively small)
     //thermometer( 1000000, 425610, false );
 
-});
+  });
 
-  </script>
+</script>
 
 </body>
 

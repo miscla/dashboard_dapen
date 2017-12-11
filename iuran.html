@@ -79,7 +79,7 @@
     </div>
   </header>
 
-  <div class="section" style="background-color: #fff;">
+  <div class="section" style="background-color: #fff; height: 100sv;">
     <div class="columns">
       <aside class="column is-2">
         <nav class="menu">
@@ -193,8 +193,26 @@
           <div class="column is-12">
             <h2 style="font-weight:bold">History Nunggak</h2>
             <canvas id="chartNunggak" style="margin-bottom:25px;"></canvas>
+            
             <div id="chartNunggak" class="chartNunggak"></div>
-          </div>
+
+             <div id="wizard" class="swMain" style="visibility:hidden">
+                <div class="panel-heading">
+                    BOTTOM 10
+                </div>
+                <div class="panel-block" style="width:100%;">
+                    <table id="monthlyData" class="table is-striped is-bordered" cellspacing="0" width="(100/x)%" style="margin-left:0px; margin-bottom:-10px;">
+                        <thead>
+                            <tr>
+                                <th>Name</th>
+                                <th>Position</th>
+                            </tr>
+                        </thead>
+                        <tbody id="tableData">
+                        </tbody>
+                    </table>
+                </div>
+             </div>
       </main>
     </div>
   </div>
@@ -223,6 +241,15 @@
             	}
 		    });
 		});
+        $(document).ready(function(){
+            $('#monthlyData').DataTable({
+                "drawCallback": function( settings ){
+                    if(!$("#monthlyData").parent().hasClass("table-is-responsive")){
+                        $("#monthlyData").wrap('<div class="table-is-responsive"></div>');
+                    }
+                }
+            });
+        });
 	</script>
 
   <script src="js/bar_sk.js"></script>
@@ -261,6 +288,7 @@
         options: {
             onClick: function(c,i){
                 e=i[0];
+                toggle_visibility('wizard');
                 graphEventClick(e._index);
             },            
             elements: {
@@ -276,17 +304,16 @@
     });
 
     function graphEventClick(index){
-        $('.chartNunggak').empty();        
-        $('.chartNunggak').append(index);
-        // alert(index);
-        // $('.chartNunggak').append(index);
-        
+        $('#tableData').empty();
+        for(i=0;i<=index;i++){
+            var html_to_insert = "<tr><td>" + chart.data.labels[i] + "</td><td>Dummy</td></tr>";
+            $(html_to_insert).insertAfter("#tableData")        
+        }
     }
 
-    for(i=0;i<chart.data.labels.length;i++){
-        chart.data.labels[i].onClick = function(){
-            alert(chart.data.labels[i]);
-        }
+    function toggle_visibility(id){
+        var e =document.getElementById(id);
+        e.style.visibility = 'visible';
     }
 
   </script>
