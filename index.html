@@ -101,8 +101,17 @@
   left:0px;
 }
 
-#coba:hover {
-  background-color: black;
+/*Progress Kelebihan Bayar*/
+@import url(https://fonts.googleapis.com/css?family=Lato:300);
+
+
+.progress2 {
+  background: #34495e;
+  border-radius: 50%;
+  border: 2px solid #34495e;
+  overflow: hidden;
+  width: 150px;
+  height: 150px;
 }
 
 </style>
@@ -292,6 +301,16 @@
                   </div>
                 </div>
               </div>
+              <div class="panel-block" style="width:100%; background:blue">
+                <div class="columns" style="width:100%; text-align:center; color:white">
+                  <div class="column is-6">
+                    Sudah Iuran | 80 Jiwa
+                  </div>
+                  <div class="column is-6">
+                    Belum Iuran | 20 Jiwa
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="column is-2">
@@ -314,17 +333,37 @@
                   </div>
                 </div>
               </div>
+              <div class="panel-block" style="width:100%; background:blue">
+                <div class="columns" style="width:100%; color:white">
+                  <div class="column is-12">
+                    SK Tercapai : 47 SK
+                  </div>
+                </div>
+              </div>
             </div>
           </div>
           <div class="column is-6">
             <div class="panel">
               <div class="panel-block" style="width:100%">
-                <p style="text-align:left; width:100%">Tangguhan</p>
+                <p style="text-align:left; width:100%">Tangguhan | <font color="green">3.54 Bulan</font></p>
                 <a href="sk.html" class="button is-link" style="">Detail</a>
               </div>
               <div class="panel-block" style="width:100%">
                 <canvas id="myChart" height="142px"></canvas>
                 <div id="myChart"></div>
+              </div>
+              <div class="panel-block" style="width:100%; background:blue">
+                <div class="columns" style="width:100%; text-align:center; color:white">
+                  <div class="column is-4">
+                    1 - 6 Bulan | 116 Jiwa
+                  </div>
+                  <div class="column is-4">
+                    6 - 12 Bulan | 28 Jiwa
+                  </div>
+                  <div class="column is-4">
+                    12 Bulan ++ | 46 Jiwa
+                  </div>
+                </div>
               </div>
             </div>
           </div>
@@ -437,63 +476,79 @@
             </section>
           </div>
         </div> -->
-        <div class="panel" style="">
-          <div class="panel-block">
-            <div class="columns" style="width:100%">
-              <div class="column is-2" style="text-align:center; margin-top:30px;">
-                Kelebihan Bayar
-                <a href="kelebihan_bayar.html" class="button is-link" style="margin-top: -7px;">Detail</a>
-              </div>
-              <div class="column is-10">
-                <meter class="meter_pensiun" value="240.000.000" min="0" max="300.000.000" title="Juta">
-                  <div class="meter-gauge">
-                    <span style="width: 20%;">Total Kelebihan Bayar</span>
+        <div class="panel">
+          <div class="panel-block" style="width:100%">
+            <p style="text-align:left; width:100%">Kelebihan Bayar | <font color="green">Laporan Hapus [ 4.06 Bulan ]</font></p>
+            <a href="kelebihan_bayar.html" class="button is-link" style="">Detail</a>
+          </div>
+          <div class="panel-block" style="height:200px">
+            <div class="columns" style="width:100%; margin-left: 0px;">
+              <div class="column is-3" style="text-align:center;">
+                <div class="columns">
+                  <div class='progress2 column is-6'>
+                    <p style="color: red; font-size: 30px; margin-top: 30%;  font-family: 'Lato';">100%</p>
                   </div>
-                </meter>
-                <ul class="swatch">
-                  <li class="swatch__elem">Datul | 200.000.000
-                  </li>
-                  <li class="swatch__elem">Kunjungan | 25.000.000
-                  </li>
-                  <li class="swatch__elem">Kecepatan Laporan Hapus | 15.000.000
-                  </li>
-                </ul>
+                  <div class="column is-6" style="text-align: left; margin-top: 20px;">
+                    <p style="font-size: 20px; font-family: 'Lato'; font-weight: bold;">Datul Sem-1</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Tercapai : 28.598</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Target : 30.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-3" style="text-align:center;">
+                <div class="columns">
+                  <div class='progress2 column is-6'>
+                    <p style="color: red; font-size: 30px; margin-top: 30%;  font-family: 'Lato';">100%</p>
+                  </div>
+                  <div class="column is-6" style="text-align: left; margin-top: 20px;">
+                    <p style="font-size: 20px; font-family: 'Lato'; font-weight: bold;">Datul Sem-1</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Tercapai : 28.598</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Target : 30.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-3" style="text-align:center;">
+                <div class="columns">
+                  <div class='progress2 column is-6'>
+                    <p style="color: red; font-size: 30px; margin-top: 30%;  font-family: 'Lato';">100%</p>
+                  </div>
+                  <div class="column is-6" style="text-align: left; margin-top: 20px;">
+                    <p style="font-size: 20px; font-family: 'Lato'; font-weight: bold;">Datul Sem-1</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Tercapai : 28.598</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Target : 30.000</p>
+                  </div>
+                </div>
+              </div>
+              <div class="column is-3" style="text-align:center;">
+                <div class="columns">
+                  <div class='progress2 column is-6'>
+                    <p style="color: red; font-size: 30px; margin-top: 30%;  font-family: 'Lato';">100%</p>
+                  </div>
+                  <div class="column is-6" style="text-align: left; margin-top: 20px;">
+                    <p style="font-size: 20px; font-family: 'Lato'; font-weight: bold;">Datul Sem-1</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Tercapai : 28.598</p>
+                    <p style="font-size: 16px; font-family: 'Lato';">Target : 30.000</p>
+                  </div>
+                </div>
               </div>
             </div>
-
-            <!-- <div class="columns" style="width:100%">
-              <div class="column is-2">
-
-              </div>
-              <div class="column is-10" style="">
-                <ul class="swatch">
-                  <li class="swatch__elem">Datul | 200.000.000
-                  </li>
-                  <li class="swatch__elem">Kunjungan | 25.000.000
-                  </li>
-                  <li class="swatch__elem">Kecepatan Laporan Hapus | 15.000.000
-                  </li>
-                </ul>
-              </div>
-            </div> -->
           </div>
-        </div>
-      </main>
+        </main>
+      </div>
     </div>
-  </div>
-  
-  <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-  <script type="text/javascript" src="https://cdnjs.com/libraries/jQuery.mmenu"></script>
 
-  <script src="./js/jquery.sidebar.js"></script>
-  <script src="http://jillix.github.io/jQuery-sidebar/js/handlers.js"></script>
-  <script src="/bulma-admin-dashboard-template/dist/build.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script type="text/javascript" src="https://cdnjs.com/libraries/jQuery.mmenu"></script>
 
-  <script src="js/bar_sk.js"></script>
-  <script src="js/chart_pensiun.js"></script>
-  <script src="js/chart_atas.js"></script>
+    <script src="./js/jquery.sidebar.js"></script>
+    <script src="http://jillix.github.io/jQuery-sidebar/js/handlers.js"></script>
+    <script src="/bulma-admin-dashboard-template/dist/build.js"></script>
 
-  <script>
+    <script src="js/bar_sk.js"></script>
+    <script src="js/chart_pensiun.js"></script>
+    <script src="js/chart_atas.js"></script>
+
+    <script>
     //originally from http://stackoverflow.com/questions/149055/how-can-i-format-numbers-as-money-in-javascript
     function formatCurrency(n, c, d, t) {
       "use strict";
